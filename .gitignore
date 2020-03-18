@@ -1,3 +1,7 @@
 node_modules/
 build/
 .vscode/ipch
+amaprotos/*.js
+AMA_ProtoFiles/*.proto
+AMA_ProtoFiles/*.options
+package-lock.json

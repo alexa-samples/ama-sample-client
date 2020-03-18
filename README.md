@@ -38,14 +38,15 @@ https://developer.amazon.com/alexa/console/avs/preview/resources/details/AMA%20K
 Download and unzip AMA_ProtoFiles.zip.
 
 ```sh
-$ cd DevAMA
-$ unzip ~/Downloads/AMA_Protofiles.zip
+$ cd ~/Downloads
+$ unzip AMA_Protofiles.zip
+$ mv AMA_Protofiles/* ~/DevAMA/AMA_Protofiles/
 ```
 
 ## Step 4: Generate JavaScript-based serialization code
 
 ```sh
-$ cd AMA_ProtoFiles
+$ cd ~/DevAMA/AMA_ProtoFiles
 $ protoc --proto_path=. --js_out=import_style=commonjs,binary:. *.proto
 $ mv *js ../amaprotos/
 ```
@@ -102,7 +103,7 @@ The device is now connected. You can see a few messages appearing in the client 
 ## Step 8: Interact with the device
 Anytime you wish to speak through the microphone, press 's' followed by ENTER.
 
-Note that the speech returnted from ALexa will be played on your phone.
+Note that the speech returnted from Alexa will be played on your phone. Our client does not implement Bluetooth A2DP profile that is required to play audio in the client.
 
 To quit the client app, press 'q' and enter keys.
 
