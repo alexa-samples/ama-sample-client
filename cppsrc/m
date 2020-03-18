@@ -1,0 +1,6 @@
+gcc -c -fsyntax-only \
+  -I../node_modules/node-addon-api \
+  -I../node_modules/node-addon-api/external-napi \
+  *.cpp > make.err 2>&1
+vi make.err
+
