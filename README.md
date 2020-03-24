@@ -17,7 +17,7 @@ $ sudo apt install bluetooth bluez
 $ sudo apt install git g++  npm  protobuf-compiler
 $ sudo npm install npm@latest -g
 $ sudo npm install -g node-gyp
-$ sudo apt-get install -y libusb-dev libdbus-1-dev libglib2.0-dev libudev-dev libical-dev libreadline-dev libasound2-dev libopus-dev libbluetooth-dev
+$ sudo apt install -y libusb-dev libdbus-1-dev libglib2.0-dev libudev-dev libical-dev libreadline-dev libasound2-dev libopus-dev libbluetooth-dev
 ```
 
 ## Step 2: Download AMA client code and dependencies
