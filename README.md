@@ -4,7 +4,7 @@ This is a minimal implementation of an AMA sample client to help you get started
 
 The client uses Bluetooth Low Energy (BLE) protocol to communicate with Alexa app on your mobile phone,
 
-The cleint does not implement A2DP return path. If you ask a question to Alexa, the answer would be heard on your paired phone.
+The client does not implement A2DP return path. If you ask a question to Alexa, the answer would be heard on your paired phone.
 
 The client has been tested on Ubuntu 18.04 as well as on Raspbian OS (Raspberry Pi).
 
