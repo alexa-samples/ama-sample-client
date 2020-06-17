@@ -12,13 +12,19 @@ The app is dependent on several third-party libraries, environments, and/or othe
 
 ## Step 1: Install the required software packages
 
+Note that, although we can use the latest npm, the version of Node.js needed is 8.
+
 ```sh
 $ sudo apt install bluetooth bluez 
 $ sudo apt install git g++  npm  protobuf-compiler
 $ sudo npm install npm@latest -g
 $ sudo npm install -g node-gyp
+$ sudo npm install -g n
+$ sudo n 8
 $ sudo apt install -y libusb-dev libdbus-1-dev libglib2.0-dev libudev-dev libical-dev libreadline-dev libasound2-dev libopus-dev libbluetooth-dev
 ```
+
+
 
 ## Step 2: Download AMA client code and dependencies
 
