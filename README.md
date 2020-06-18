@@ -12,7 +12,7 @@ The app is dependent on several third-party libraries, environments, and/or othe
 
 ## Step 1: Install the required software packages
 
-Note that, although we can use the latest npm, the version of Node.js needed is 8.
+Note that the version of Node.js required is 8.xx.
 
 ```sh
 $ sudo apt install bluetooth bluez 
