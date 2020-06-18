@@ -17,10 +17,10 @@ Note that, although we can use the latest npm, the version of Node.js needed is 
 ```sh
 $ sudo apt install bluetooth bluez 
 $ sudo apt install git g++  npm  protobuf-compiler
-$ sudo npm install npm@latest -g
-$ sudo npm install -g node-gyp
 $ sudo npm install -g n
 $ sudo n 8
+$ sudo npm install npm@latest -g
+$ sudo npm install -g node-gyp
 $ sudo apt install -y libusb-dev libdbus-1-dev libglib2.0-dev libudev-dev libical-dev libreadline-dev libasound2-dev libopus-dev libbluetooth-dev
 ```
 
@@ -75,9 +75,38 @@ global.deviceID = "xxxx"; // Device ID from devportal
 global.deviceSerial = "yyyy"; // Serial num of this device
 ```
 
+## Step 6: Set proper device address for microphone
+
+Edit audioSender.js and update the following lines:
+
+```javascript
+const micDevicePi = "plughw:1,0"; // For Pi
+const micDeviceUbu = "default"; // for Ubuntu
+const micDevice = isPi() ? micDevicePi : micDeviceUbu;
+```
+
+In general, you can run the command "aplay -l" to get the
+list of all the audio devices. Find the microphone you are
+using and update either micDevicePi (on Raspberry Pi) or
+micDeviceUbu (on Ubuntu).
+
+For example, if the microphone is listed as card number 2
+and device number 0, you can use "plughw:2,0" as your value.
+
+## Step 7: Set proper sampling frequency
+
+Edit audioSender.js and update the following line:
+
+```javascript
+const sampFreq = 48000;
+```
+
+A value of 16000 is ideal. However, not all microphones may
+support this value. In that case, you can use a multiple of
+16000.
 
 
-## Step 6:  Run the client app
+## Step 8: Run the client app
 
 Either stop or disable Bluetooth daemon. This is required by the BLE package being used, Bleno.
 ```sh
@@ -100,7 +129,7 @@ $ cd ~/DevAMA
 $ sudo node main
 ```
 
-## Step 7: Add your new device from Alexa app
+## Step 9: Add your new device from Alexa app
 
 Open the Alexa app on your phone and add a new device of "Headphones" type. The app will scan nearby devices and will display the name of your device. Select it. 
 
